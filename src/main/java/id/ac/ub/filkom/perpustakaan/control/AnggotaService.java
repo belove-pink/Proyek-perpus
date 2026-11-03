@@ -1,9 +1,10 @@
 
-package id.ac.ub.filkom.contoh.service;
+package id.ac.ub.filkom.perpustakaan.control;
 
-import id.ac.ub.filkom.contoh.entity.Anggota;
-import id.ac.ub.filkom.contoh.repository.AnggotaRepository;
 import org.springframework.stereotype.Service;
+
+import id.ac.ub.filkom.perpustakaan.entity.Anggota;
+import id.ac.ub.filkom.perpustakaan.entity.AnggotaRepository;
 
 import java.util.List;
 

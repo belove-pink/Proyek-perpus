@@ -1,5 +1,5 @@
 
-package id.ac.ub.filkom.contoh.entity;
+package id.ac.ub.filkom.perpustakaan.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

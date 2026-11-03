@@ -1,8 +1,9 @@
-package id.ac.ub.filkom.contoh.service;
+package id.ac.ub.filkom.perpustakaan.control;
 
-import id.ac.ub.filkom.contoh.entity.Buku;
-import id.ac.ub.filkom.contoh.repository.BukuRepository;
 import org.springframework.stereotype.Service;
+
+import id.ac.ub.filkom.perpustakaan.entity.Buku;
+import id.ac.ub.filkom.perpustakaan.entity.BukuRepository;
 
 import java.util.List;
 

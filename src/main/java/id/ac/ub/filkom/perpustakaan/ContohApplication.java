@@ -1,4 +1,4 @@
-package id.ac.ub.filkom.contoh;
+package id.ac.ub.filkom.perpustakaan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

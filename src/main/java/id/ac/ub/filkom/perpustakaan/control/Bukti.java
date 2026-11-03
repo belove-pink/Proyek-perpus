@@ -1,9 +1,8 @@
 
-package id.ac.ub.filkom.contoh.service;
+package id.ac.ub.filkom.perpustakaan.control;
 
+import id.ac.ub.filkom.perpustakaan.entity.TransaksiPinjam;
 import java.time.LocalDate;
-
-import id.ac.ub.filkom.contoh.entity.TransaksiPinjam;
 
 /** Data hasil peminjaman buku. */
 public class Bukti {
@@ -34,9 +33,23 @@ public class Bukti {
         );
     }
 
-    public String getIdTransaksi() { return idTransaksi; }
-    public String getNamaAnggota() { return namaAnggota; }
-    public String getJudulBuku() { return judulBuku; }
-    public LocalDate getTanggalPinjam() { return tanggalPinjam; }
-    public String getStatus() { return status; }
+    public String getIdTransaksi() {
+        return idTransaksi;
+    }
+
+    public String getNamaAnggota() {
+        return namaAnggota;
+    }
+
+    public String getJudulBuku() {
+        return judulBuku;
+    }
+
+    public LocalDate getTanggalPinjam() {
+        return tanggalPinjam;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 }

@@ -1,13 +1,13 @@
 
-package id.ac.ub.filkom.contoh.controller;
-
-import id.ac.ub.filkom.contoh.repository.AnggotaRepository;
-import id.ac.ub.filkom.contoh.repository.BukuRepository;
-import id.ac.ub.filkom.contoh.service.PinjamService;
+package id.ac.ub.filkom.perpustakaan.boundary;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import id.ac.ub.filkom.perpustakaan.control.PinjamService;
+import id.ac.ub.filkom.perpustakaan.entity.AnggotaRepository;
+import id.ac.ub.filkom.perpustakaan.entity.BukuRepository;
 
 @Controller
 public class HalamanPinjamController {
