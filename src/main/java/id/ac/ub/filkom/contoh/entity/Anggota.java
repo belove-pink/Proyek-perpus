@@ -1,12 +1,11 @@
 
 package id.ac.ub.filkom.contoh.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-/** Entity: satu objek Anggota = satu baris di tabel "anggota". */
+/** Entity: satu objek Anggota = satu baris di tabel anggota. */
 @Entity
 @Table(name = "anggota")
 public class Anggota {
@@ -21,7 +20,10 @@ public class Anggota {
     @Column(name = "batas_pinjam")
     private int batasPinjam;
 
-    protected Anggota() { }            // wajib ada untuk JPA
+    @OneToMany(mappedBy = "anggota")
+    private List<TransaksiPinjam> daftarPinjam = new ArrayList<>();
+
+    protected Anggota() { }
 
     public Anggota(String idAnggota, String nama, int batasPinjam) {
         this.idAnggota = idAnggota;
@@ -29,7 +31,19 @@ public class Anggota {
         this.batasPinjam = batasPinjam;
     }
 
+    public boolean cekBatasPinjam() {
+        long sedangDipinjam = daftarPinjam.stream()
+                .filter(TransaksiPinjam::isDipinjam)
+                .count();
+
+        return sedangDipinjam < batasPinjam;
+    }
+
+    void catatPinjaman(TransaksiPinjam transaksi) {
+        daftarPinjam.add(transaksi);
+    }
+
     public String getIdAnggota() { return idAnggota; }
-    public String getNama()      { return nama; }
-    public int getBatasPinjam()  { return batasPinjam; }
+    public String getNama() { return nama; }
+    public int getBatasPinjam() { return batasPinjam; }
 }

@@ -1,3 +1,4 @@
+
 package id.ac.ub.filkom.contoh.entity;
 
 import jakarta.persistence.Column;
@@ -20,7 +21,7 @@ public class Buku {
     @Column(name = "stok")
     private int stok;
 
-    protected Buku() { }               // wajib ada untuk JPA
+    protected Buku() { }
 
     public Buku(String idBuku, String judul, int stok) {
         this.idBuku = idBuku;
@@ -29,6 +30,14 @@ public class Buku {
     }
 
     public String getIdBuku() { return idBuku; }
-    public String getJudul()  { return judul; }
-    public int getStok()      { return stok; }
+    public String getJudul() { return judul; }
+    public int getStok() { return stok; }
+
+    // Mengurangi stok buku sebanyak satu
+    public void kurangiStok() {
+        if (stok <= 0) {
+            throw new IllegalStateException("Stok buku habis");
+        }
+        stok--;
+    }
 }
